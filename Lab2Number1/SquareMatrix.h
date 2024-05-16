@@ -5,7 +5,7 @@
 class SquareMatrix {
 public:
 	// Constructor
-	SquareMatrix(int size) : n(size), Matrix(size, std::vector<int>(size)) { }
+	SquareMatrix(int size) : m_n(size), m_Matrix(size, std::vector<int>(size)) { }
 
 	//Destructor
 	~SquareMatrix() { }
@@ -30,7 +30,7 @@ public:
 	SquareMatrix& operator+=(const SquareMatrix& matrixSecond);
 
 private:
-	int n;
-	std::vector<std::vector<int>>Matrix;
-	std::vector<std::vector<int>>MatrixSecond;
+	int m_n;
+	std::vector<std::vector<int>>m_Matrix;
+	std::vector<std::vector<int>>m_MatrixSecond;
 };
