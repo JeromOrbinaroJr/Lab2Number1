@@ -12,8 +12,8 @@ public:
 	~SquareMatrix() { }
 
 	// Getters
-	int GetN() const;
-	const std::vector<std::vector<int>>& GetMatrix() const;
+	int GetN() const&;
+	const std::vector<std::vector<int>>& GetMatrix() const&;
 
 	// Setters
 	void SetN(int size);
