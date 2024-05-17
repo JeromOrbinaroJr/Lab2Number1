@@ -4,8 +4,9 @@
 
 class SquareMatrix {
 public:
-	// Constructor
-	SquareMatrix(int size) : m_n(size), m_Matrix(size, std::vector<int>(size)) { }
+	// Constructors
+	SquareMatrix();
+	SquareMatrix(int size);
 
 	//Destructor
 	~SquareMatrix() { }

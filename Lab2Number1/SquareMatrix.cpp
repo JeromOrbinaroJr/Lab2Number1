@@ -1,6 +1,10 @@
 #include "SquareMatrix.h"
 #include <iostream>
 
+//Constructor
+SquareMatrix::SquareMatrix() {};
+SquareMatrix::SquareMatrix(int size) : m_n(size), m_Matrix(size, std::vector<int>(size)) {}
+
 //Getters
 int SquareMatrix::GetN() const { return m_n; }
 const std::vector<std::vector<int>>& SquareMatrix::GetMatrix() const { return m_Matrix; }
