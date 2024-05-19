@@ -1,23 +1,25 @@
 #pragma once
 #include <vector>
 #include <iostream>
+#include <stdexcept>
+using u_Matrix = std::vector<std::vector<int>>;
 
 class SquareMatrix {
 public:
 	// Constructors
-	SquareMatrix();
-	SquareMatrix(int size);
+	SquareMatrix() = default;
+	explicit SquareMatrix(int size);
 
 	//Destructor
 	~SquareMatrix() { }
 
 	// Getters
-	int GetN() const&;
-	const std::vector<std::vector<int>>& GetMatrix() const&;
+	int GetN() const;
+	const u_Matrix& GetMatrix() const;
 
 	// Setters
 	void SetN(int size);
-	void setMatrix(const std::vector<std::vector<int>>& matrix);
+	void setMatrix(const u_Matrix& matrix);
 
 	//Methods
 	void fillMatrix();
@@ -31,7 +33,7 @@ public:
 	SquareMatrix& operator+=(const SquareMatrix& matrixSecond);
 
 private:
-	int m_n;
-	std::vector<std::vector<int>>m_Matrix;
-	std::vector<std::vector<int>>m_MatrixSecond;
+	int m_size{ 0 };
+	u_Matrix m_Matrix;
+	u_Matrix m_MatrixSecond;
 };
