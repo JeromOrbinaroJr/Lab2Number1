@@ -20,8 +20,18 @@ void SquareMatrix::fillMatrix() {
     std::cout << "Enter the elements (integers) of the square matrix " << m_size << "x" << m_size << ":\n";
     for (int i = 0; i < m_size; ++i) {
         for (int j = 0; j < m_size; ++j) {
-            std::cout << "Element [" << i << "][" << j << "]: ";
-            std::cin >> m_Matrix[i][j];
+            bool validInput = false;
+            do {
+                std::cout << "Element [" << i << "][" << j << "]: ";
+                if (std::cin >> m_Matrix[i][j]) {
+                    validInput = true;
+                }
+                else {
+                    std::cout << "Invalid input. Please enter an integer.\n" << std::endl;
+                    std::cin.clear();
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                }
+            } while (!validInput);
         }
     }
 }

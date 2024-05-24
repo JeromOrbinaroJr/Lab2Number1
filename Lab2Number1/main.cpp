@@ -57,8 +57,8 @@ int main() {
             }
         }
     }
-    catch (const std::invalid_argument& e) {
-        std::cerr << "Error: " << e.what() << "\n";
+    catch (const std::invalid_argument& ex) {
+        std::cerr << "Error: " << ex.what() << "\n";
         return 1;
     }
 }
